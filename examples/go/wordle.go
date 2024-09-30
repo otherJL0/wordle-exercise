@@ -15,22 +15,32 @@ const (
 	Green
 )
 
-// TODO
+var (
+	Unimplemnted  = errors.New("This functionality has not been implemented")
+	GuessTooShort = errors.New("Guess is shorter than 5 letters")
+	GuessTooLong  = errors.New("Guess is longer than 5 letters")
+	ReusedWord    = errors.New("Player already guessed this word")
+	MaxAttempts   = errors.New("Player already guessed 6 times")
+	GameOver      = errors.New("Player already guessed word, game over")
+)
+
 type Square struct {
 	letter rune
 	color  Color
 }
 
-// TODO
-type Wordle struct{}
+type Wordle struct {
+	word  string
+	board [][]Square
+}
 
 // TODO
-func newGame(word string) Wordle {
+func NewGame(word string) Wordle {
 	return Wordle{}
 }
 
 // TODO
 func (wordle *Wordle) CheckGuess(guess string) ([]Square, error) {
 	result := []Square{}
-	return result, errors.New("Not yet implemented")
+	return result, Unimplemnted
 }
